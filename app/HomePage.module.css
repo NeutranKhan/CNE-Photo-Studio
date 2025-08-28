@@ -1,0 +1,263 @@
+/* app/HomePage.module.css */
+
+:root {
+  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-serif: "Georgia", "Times New Roman", serif;
+  
+  --brand-primary: #0A2540;
+  --brand-secondary: #0077FF;
+  --brand-light: #F6F9FC;
+  --brand-dark: #333333;
+  --brand-accent: #FFD700;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 0 4rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* --- Hero Section --- */
+.heroSection {
+  text-align: center;
+  padding: 4rem 1rem;
+  background-color: var(--brand-light);
+  border-radius: 0.75rem;
+}
+
+.heroTitle {
+  font-family: var(--font-serif);
+  font-size: 2.75rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  letter-spacing: -0.5px;
+}
+
+.heroSubtitle {
+  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  color: #5a6b82;
+  font-family: var(--font-sans);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.orderButton {
+  margin-top: 1.5rem;
+  display: inline-block;
+  background-color: var(--brand-secondary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.orderButton:hover {
+  background-color: #006ae1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(0, 118, 255, 0.23);
+}
+
+/* --- About Section --- */
+.aboutSection {
+  display: grid;
+  gap: 3rem;
+  align-items: center;
+}
+
+.aboutText h2 {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin-bottom: 1rem;
+}
+
+.aboutText p {
+  font-family: var(--font-sans);
+  color: #374151;
+  line-height: 1.7;
+  margin-bottom: 1rem;
+}
+
+.aboutImageContainer {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  max-height: 400px;
+}
+
+.aboutImage {
+  object-fit: cover;
+}
+
+/* --- Services Section --- */
+.servicesSection {
+  text-align: center;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+  margin-bottom: 4rem;
+}
+
+.servicesGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+}
+
+.serviceCard {
+  background-color: #fff;
+  padding: 2rem;
+  border-radius: 0.75rem;
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.serviceCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.07), 0 10px 10px -5px rgba(0, 0, 0, 0.02);
+}
+
+.serviceIcon {
+  color: var(--brand-secondary);
+  margin-bottom: 1rem;
+}
+
+.serviceCard h3 {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--brand-dark);
+  margin-bottom: 0.5rem;
+}
+
+.serviceCard p {
+  font-family: var(--font-sans);
+  color: #5a6b82;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* --- Featured Section (Collage) --- */
+.featuredSection {
+    text-align: center;
+}
+
+.featuredGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 4rem;
+}
+
+.featuredCard {
+  position: relative;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15), 0 3px 6px rgba(0,0,0,0.1);
+  transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+  aspect-ratio: 9 / 16;
+}
+
+.featuredCard:hover {
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2), 0 5px 15px rgba(0,0,0,0.15);
+    transform: scale(1.05);
+}
+
+.featuredImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.galleryLink {
+  display: inline-block;
+  background-color: var(--brand-secondary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2.5rem;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  border: 2px solid var(--brand-secondary);
+  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
+  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+}
+
+.galleryLink:hover {
+  background-color: #006ae1;
+  border-color: #006ae1;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(0, 118, 255, 0.23);
+}
+
+/* --- Media Queries --- */
+@media (max-width: 900px) {
+    .pageContainer {
+        padding: 0 1.5rem;
+    }
+    .servicesGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+  .featuredGrid {
+    grid-template-columns: 1fr;
+  }
+  .featuredCard {
+    width: 80%;
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  .aboutImageContainer {
+    max-height: 300px;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroTitle {
+    font-size: 3.5rem;
+  }
+  .aboutSection {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .servicesGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+    .featuredGrid {
+        position: relative;
+        height: 700px;
+    }
+    .featuredCard {
+        position: absolute;
+        aspect-ratio: unset;
+    }
+    .featuredCard:nth-child(1) { width: 25%; height: calc(25% * 16 / 9); top: 5%; left: 10%; transform: rotate(-8deg); z-index: 1; }
+    .featuredCard:nth-child(2) { width: 30%; height: calc(30% * 16 / 9); top: 30%; left: 25%; transform: rotate(4deg); z-index: 2; }
+    .featuredCard:nth-child(3) { width: 28%; height: calc(28% * 16 / 9); top: 10%; left: 55%; transform: rotate(10deg); z-index: 1; }
+    .featuredCard:nth-child(4) { width: 22%; height: calc(22% * 16 / 9); top: 50%; left: 65%; transform: rotate(-5deg); z-index: 2; }
+    .featuredCard:nth-child(5) { width: 26%; height: calc(26% * 16 / 9); top: 55%; left: 5%; transform: rotate(6deg); z-index: 3; }
+    .featuredCard:nth-child(6) { width: 24%; height: calc(24% * 16 / 9); top: 5%; left: 35%; transform: rotate(-4deg); z-index: 0; }
+}
