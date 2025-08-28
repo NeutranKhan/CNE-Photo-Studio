@@ -1,3 +1,5 @@
+const { fontFamily } = require('tailwindcss/defaultTheme');
+
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
@@ -7,23 +9,20 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ['var(--font-montserrat)', ...fontFamily.sans],
+        serif: ['var(--font-playfair)', ...fontFamily.serif],
+      },
       colors: {
-        'brand-primary': '#0A2540', // A deep, professional blue
-        'brand-secondary': '#0077FF', // A vibrant blue for accents and links
-        'brand-light': '#F6F9FC', // A light gray for backgrounds
-        'brand-dark': '#333333', // Dark text color
-        'brand-accent': '#FFD700', // A gold/yellow accent
-      },
-      animation: {
-        'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
-      },
-      keyframes: {
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
+        'brand-primary': '#0A2540',
+        'brand-secondary': '#0077FF',
+        'brand-light': '#F6F9FC',
+        'brand-dark': '#333333',
+        'brand-accent': '#FFD700',
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/aspect-ratio'), // Add this line
+  ],
 };
