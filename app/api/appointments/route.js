@@ -26,7 +26,7 @@ export async function POST(request) {
 			headers: { 'Content-Type': 'application/json' },
 		});
 	} catch (error) {
-		console.error('Appointment save error:', error);  // Optional: Log the error for debugging
+		console.error('Appointment save error:', error);  // Optional: Log for debugging
 		return new Response(JSON.stringify({ error: 'Failed to save appointment' }), { status: 500 });
 	}
 }

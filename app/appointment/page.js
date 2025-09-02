@@ -27,7 +27,7 @@ export default function AppointmentPage() {
 			if (!res.ok) throw new Error('Failed to submit');
 			setStatus({ type: 'success', message: 'Thank you! We will confirm shortly.' });
 			form.reset();
-		} catch (e) {
+		} catch (error) {
 			setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
 		}
 	}
