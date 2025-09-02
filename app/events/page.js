@@ -70,7 +70,7 @@ export default function EventsPage() {
 
       <section className={styles.ctaSection}>
         <h2>Host Your Event with Us</h2>
-        <p>Planning a special event? Let's capture it beautifully.</p>
+        <p>Planning a special event? Let&apos;s capture it beautifully.</p>
         <Link href="/appointment" className={styles.cta}>Get in Touch</Link>
       </section>
     </div>
