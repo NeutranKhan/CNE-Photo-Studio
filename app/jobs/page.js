@@ -28,7 +28,7 @@ export default function JobsPage() {
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
           Join Our Team
         </motion.h1>
-        <p className={styles.lead}>We're always looking for talented individuals to help create amazing memories.</p>
+        <p className={styles.lead}>We&apos;re always looking for talented individuals to help create amazing memories.</p>
       </header>
 
       <section className={styles.jobsList}>
@@ -56,7 +56,7 @@ export default function JobsPage() {
       </section>
 
       <section className={styles.ctaSection}>
-        <h2>Don't See a Fit?</h2>
+        <h2>Don&apos;t See a Fit?</h2>
         <p>Send us your resume anyway—we might have something in the works.</p>
         <Link href="/contact" className={styles.cta}>Contact Us</Link>
       </section>

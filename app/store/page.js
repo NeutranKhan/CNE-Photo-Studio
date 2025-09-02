@@ -48,7 +48,7 @@ export default function StorePage() {
           visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
         }}
       >
-        {products.map((product, index) => (
+        {products.map((product) => (  // Removed 'index' since it's not used
           <motion.div
             key={product.id}
             className={styles.productCard}

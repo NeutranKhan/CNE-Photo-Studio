@@ -48,7 +48,7 @@ export default function GalleryPage() {
           visible: { opacity: 1, transition: { staggerChildren: 0.1 } },
         }}
       >
-        {filteredImages.map((img, index) => (
+        {filteredImages.map((img) => (  // Removed 'index' since it's not used
           <motion.div
             key={img.id}
             className={styles.imageCard}
