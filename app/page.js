@@ -5,7 +5,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { FaCamera, FaPrint, FaUsers } from 'react-icons/fa';
+import { FaCamera, FaPrint, FaUsers, FaClock, FaPhone, FaMapMarkerAlt } from 'react-icons/fa';
 import Modal from '../components/Modal';
 import styles from './HomePage.module.css';
 
@@ -56,7 +56,7 @@ export default function HomePage() {
             transition={{ duration: 0.6 }}
             className={styles.heroTitle}
           >
-            CNE Photo & Print
+            CNE Best Photo and Print
           </motion.h1>
           <motion.p 
             initial={{ opacity: 0, y: 20 }}
@@ -66,6 +66,7 @@ export default function HomePage() {
           >
             Capturing life's best moments with stunning quality and printing them to perfection.
           </motion.p>
+          <p className={styles.trustLine}>Trusted by 500+ happy clients</p>
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -73,9 +74,14 @@ export default function HomePage() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <Link href="/order" className={styles.orderButton}>
-                Place Order
+            <div className={styles.heroActions}>
+              <Link href="/appointment" className={styles.secondaryButton}>
+                  Book Appointment
+              </Link>
+              <Link href="/gallery" className={styles.secondaryButton}>
+                  View Gallery
             </Link>
+            </div>
           </motion.div>
         </section>
 
@@ -120,14 +126,39 @@ export default function HomePage() {
                         <div className={styles.serviceIcon} aria-hidden="true">{service.icon}</div>
                         <h3>{service.title}</h3>
                         <p>{service.description}</p>
+                        <div className={styles.servicePrice}>Starting at $49</div>
                     </motion.div>
                 ))}
+            </div>
+        </section>
+
+        {/* Quick Info Strip */}
+        <section>
+          <div className={styles.infoStrip}>
+            <div className={styles.infoItem}>
+              <FaClock aria-hidden="true" />
+              <span>Mon–Sat: 9am–7pm</span>
+            </div>
+            <div className={styles.infoItem}>
+              <FaPhone aria-hidden="true" />
+              <span>Call/WhatsApp: +1 (555) 123‑4567</span>
+            </div>
+            <div className={styles.infoItem}>
+              <FaMapMarkerAlt aria-hidden="true" />
+              <span>123 Studio Ave, Your City</span>
+            </div>
             </div>
         </section>
 
         {/* Featured Photos Section */}
         <section className={styles.featuredSection}>
           <h2 className={styles.sectionTitle}>A Glimpse of Our Work</h2>
+          <div className={styles.categoryLinks}>
+            <Link className={styles.categoryLink} href="/gallery?category=portraits">Portraits</Link>
+            <Link className={styles.categoryLink} href="/gallery?category=events">Events</Link>
+            <Link className={styles.categoryLink} href="/gallery?category=products">Products</Link>
+            <Link className={styles.categoryLink} href="/gallery?category=family">Family</Link>
+          </div>
           <div className={styles.featuredGrid}>
             {featuredPhotos.map((photo, index) => (
               <motion.div
@@ -155,6 +186,25 @@ export default function HomePage() {
           <Link href="/gallery" className={styles.galleryLink}>
             View Full Gallery
           </Link>
+        </section>
+
+        {/* Testimonials */}
+        <section className={styles.testimonialsSection}>
+          <h2 className={styles.sectionTitle}>What Clients Say</h2>
+          <div className={styles.testimonialsGrid}>
+            <div className={styles.testimonialCard}>
+              “Absolutely loved our family photos—friendly team and gorgeous prints.”
+              <div style={{ marginTop: '0.5rem', color: '#6b7280' }}>— Sarah K.</div>
+            </div>
+            <div className={styles.testimonialCard}>
+              “They handled our corporate shoot flawlessly. Fast turnaround too.”
+              <div style={{ marginTop: '0.5rem', color: '#6b7280' }}>— Mark D.</div>
+            </div>
+            <div className={styles.testimonialCard}>
+              “Great value and quality. The canvas prints look amazing on our wall.”
+              <div style={{ marginTop: '0.5rem', color: '#6b7280' }}>— Aisha R.</div>
+            </div>
+          </div>
         </section>
       </div>
 

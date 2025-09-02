@@ -10,10 +10,10 @@ export default function Navbar() {
   const navLinks = [
     { href: '/', label: 'Home' },
     { href: '/about', label: 'About' },
-    { href: '/order', label: 'Order' },
+    { href: '/appointment', label: 'Book Appointment' },
     { href: '/events', label: 'Events' },
     { href: '/gallery', label: 'Gallery' },
-    { href: '/products', label: 'Products' },
+    { href: '/store', label: 'Store' },
     { href: '/jobs', label: 'Jobs' },
     { href: '/contact', label: 'Contact' },
     { href: '/location', label: 'Location' },
@@ -25,7 +25,7 @@ export default function Navbar() {
         <div className={styles.flexContainer}>
           <div className={styles.logoContainer}>
             <Link href="/" className={styles.logo}>
-              CNE Photo
+              CNE Best Photo and Print
             </Link>
           </div>
           <div className={styles.desktopNav}>

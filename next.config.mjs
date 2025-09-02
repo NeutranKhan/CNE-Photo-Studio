@@ -1,7 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  // The images configuration is no longer needed for local images.
-  // You can leave it empty or remove it.
+	reactStrictMode: true,
+  // Format expects strings like "http://host:port"
+	allowedDevOrigins: [
+		'http://localhost:3000',
+		'http://127.0.0.1:3000',
+		'http://192.168.42.185:3000',
+	],
 };
 
 export default nextConfig;

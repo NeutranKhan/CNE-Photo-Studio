@@ -1,7 +1,3 @@
-'use client';
-
-import { motion } from 'framer-motion';
-import Image from 'next/image';
 import { Playfair_Display, Montserrat } from "next/font/google";
 import "./globals.css";
 import Navbar from "../components/Navbar";
@@ -21,6 +17,27 @@ const montserrat = Montserrat({
 
 
 
+export const metadata = {
+  title: 'CNE Best Photo and Print | Studio & High‑Quality Printing',
+  description: 'Professional photography, event coverage, and premium printing in one studio. Book an appointment or explore our gallery and store.',
+  openGraph: {
+    title: 'CNE Best Photo and Print',
+    description: 'Professional photography, event coverage, and premium printing in one studio.',
+    url: 'https://example.com/',
+    siteName: 'CNE Best Photo and Print',
+    images: [
+      {
+        url: '/images/featured-4.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'CNE Best Photo and Print',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
@@ -34,41 +51,5 @@ export default function RootLayout({ children }) {
         </div>
       </body>
     </html>
-  );
-}
-
-export function Modal({ selectedImg, setSelectedImg }) {
-  if (!selectedImg) return null;
-
-  const handleClick = (e) => {
-    if (e.target.classList.contains('backdrop')) {
-      setSelectedImg(null);
-    }
-  };
-
-  return (
-    <motion.div
-      className="fixed inset-0 bg-black bg-opacity-75 z-50 flex justify-center items-center p-4 backdrop"
-      onClick={handleClick}
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      exit={{ opacity: 0 }}
-    >
-      <motion.div
-        initial={{ scale: 0.8, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        exit={{ scale: 0.8, opacity: 0 }}
-        transition={{ type: 'spring', stiffness: 300, damping: 30 }}
-        className="relative"
-      >
-        <Image
-          src={selectedImg.src}
-          alt={selectedImg.title}
-          width={400}
-          height={600}
-          className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
-        />
-      </motion.div>
-    </motion.div>
   );
 }

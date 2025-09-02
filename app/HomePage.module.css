@@ -1,15 +1,6 @@
 /* app/HomePage.module.css */
 
-:root {
-  --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-serif: "Georgia", "Times New Roman", serif;
-  
-  --brand-primary: #0A2540;
-  --brand-secondary: #0077FF;
-  --brand-light: #F6F9FC;
-  --brand-dark: #333333;
-  --brand-accent: #FFD700;
-}
+
 
 .pageContainer {
   display: flex;
@@ -46,24 +37,42 @@
   margin-right: auto;
 }
 
-.orderButton {
-  margin-top: 1.5rem;
-  display: inline-block;
-  background-color: var(--brand-secondary);
-  color: white;
-  font-weight: 600;
-  padding: 0.75rem 2.5rem;
-  border-radius: 0.5rem;
-  text-decoration: none;
-  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
-  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+.trustLine {
+  margin-top: 0.5rem;
+  color: #6b7280;
+  font-size: 0.95rem;
 }
 
-.orderButton:hover {
-  background-color: #006ae1;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px 0 rgba(0, 118, 255, 0.23);
+.heroActions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.25rem;
 }
+
+.secondaryButton {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--brand-primary);
+  font-weight: 700;
+  padding: 0.75rem 2.5rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  border: 2px solid var(--brand-primary);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s, border-color 0.2s;
+  background-image: linear-gradient(90deg, var(--brand-accent), var(--brand-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.secondaryButton:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-accent);
+}
+
+.orderButton { }
 
 /* --- About Section --- */
 .aboutSection {
@@ -154,6 +163,29 @@
   line-height: 1.6;
 }
 
+.servicePrice {
+  margin-top: 0.5rem;
+  font-weight: 600;
+  color: var(--brand-primary);
+}
+
+.infoStrip {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 2rem 0 0;
+}
+
+.infoItem {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.5rem;
+}
+
 /* --- Featured Section (Collage) --- */
 .featuredSection {
     text-align: center;
@@ -191,22 +223,58 @@
 
 .galleryLink {
   display: inline-block;
-  background-color: var(--brand-secondary);
-  color: white;
-  font-weight: 600;
+  color: var(--brand-primary);
+  font-weight: 700;
   padding: 0.75rem 2.5rem;
-  border-radius: 0.5rem;
+  border-radius: 9999px;
   text-decoration: none;
-  border: 2px solid var(--brand-secondary);
-  box-shadow: 0 4px 14px 0 rgba(0, 118, 255, 0.39);
-  transition: background-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  border: 2px solid var(--brand-primary);
+  transition: background-color 0.2s, color 0.2s, transform 0.2s, border-color 0.2s;
+  background-image: linear-gradient(90deg, var(--brand-accent), var(--brand-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
 .galleryLink:hover {
-  background-color: #006ae1;
-  border-color: #006ae1;
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px 0 rgba(0, 118, 255, 0.23);
+  border-color: var(--brand-accent);
+}
+
+.categoryLinks {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 1rem 0 2rem;
+}
+
+.categoryLink {
+  display: inline-block;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 9999px;
+  color: var(--brand-primary);
+  text-decoration: none;
+  background-color: #fff;
+}
+
+.testimonialsSection {
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.testimonialsGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.testimonialCard {
+  background-color: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  text-align: left;
 }
 
 /* --- Media Queries --- */
@@ -242,6 +310,12 @@
   }
   .servicesGrid {
     grid-template-columns: repeat(3, 1fr);
+  }
+  .infoStrip {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .testimonialsGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 
