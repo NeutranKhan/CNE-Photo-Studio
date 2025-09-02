@@ -1,0 +1,121 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem 3rem 1.5rem;
+}
+
+.header {
+  text-align: center;
+  margin: 2rem 0 1rem 0;
+}
+
+.lead {
+  color: #6b7280;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.productsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+.productCard {
+  position: relative;
+  border: 1px solid #e5e7eb;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.productCard:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.productCard img {
+  object-fit: cover;
+  width: 100%;
+  height: 200px;
+}
+
+.productInfo {
+  padding: 1rem;
+}
+
+.productInfo h3 {
+  font-family: var(--font-serif);
+  color: var(--brand-primary);
+  margin-bottom: 0.5rem;
+}
+
+.productInfo p {
+  margin-bottom: 0.5rem;
+  color: #374151;
+}
+
+.price {
+  font-weight: 600;
+  color: var(--brand-secondary);
+}
+
+.quoteBtn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  border: 2px solid var(--brand-primary);
+  text-decoration: none;
+  font-weight: 700;
+  background-image: linear-gradient(90deg, var(--brand-accent), var(--brand-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.quoteBtn:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-accent);
+}
+
+.ctaSection {
+  text-align: center;
+  margin-top: 4rem;
+  padding: 2rem;
+  background: var(--brand-light);
+  border-radius: 0.75rem;
+}
+
+.ctaSection h2 {
+  font-family: var(--font-serif);
+  color: var(--brand-primary);
+}
+
+.cta {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  border: 2px solid var(--brand-primary);
+  border-radius: 9999px;
+  text-decoration: none;
+  font-weight: 700;
+  background-image: linear-gradient(90deg, var(--brand-accent), var(--brand-secondary));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s, border-color 0.2s;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
+  border-color: var(--brand-accent);
+}
+
+@media (max-width: 768px) {
+  .productsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  }
+}

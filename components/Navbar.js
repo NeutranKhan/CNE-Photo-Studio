@@ -16,8 +16,7 @@ export default function Navbar() {
     { href: '/store', label: 'Store' },
     { href: '/jobs', label: 'Jobs' },
     { href: '/contact', label: 'Contact' },
-    { href: '/location', label: 'Location' },
-  ];
+  ]; // Removed Location link
 
   return (
     <nav className={styles.nav}>
