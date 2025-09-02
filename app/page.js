@@ -64,7 +64,7 @@ export default function HomePage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className={styles.heroSubtitle}
           >
-            Capturing life's best moments with stunning quality and printing them to perfection.
+            Capturing life&apos;s best moments with stunning quality and printing them to perfection.
           </motion.p>
           <p className={styles.trustLine}>Trusted by 500+ happy clients</p>
           <motion.div
