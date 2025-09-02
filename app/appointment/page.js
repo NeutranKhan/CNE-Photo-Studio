@@ -27,8 +27,8 @@ export default function AppointmentPage() {
 			if (!res.ok) throw new Error('Failed to submit');
 			setStatus({ type: 'success', message: 'Thank you! We will confirm shortly.' });
 			form.reset();
-		} catch (_error) {
-			// eslint-disable-next-line @typescript-eslint/no-unused-vars
+		} catch (error) {
+			console.error('Appointment form error:', error);
 			setStatus({ type: 'error', message: 'Something went wrong. Please try again.' });
 		}
 	}
